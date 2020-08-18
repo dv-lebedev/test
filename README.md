@@ -22,6 +22,7 @@
 ### Задаем подсветку в файле конфигурации
 
 - простая
+```json
 "Backlight": {
 			"Type": "BasicBacklight",
 			"Colors" : [ 
@@ -29,8 +30,10 @@
 				"#1fddff"
 			]
 		},
+```
 
 - с диапазоном
+```json
 "Backlight": {
 	"Type" : "RangeBacklight",
 	"Bigger" : {
@@ -46,6 +49,7 @@
 		"Color" : "#ffccaa"
 	}
 },
+```
 
 
 
