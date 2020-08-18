@@ -24,6 +24,7 @@
 ### Задаем подсветку в файле конфигурации
 
 - простая
+```json
 "Backlight": {
 			"Type": "BasicBacklight",
 			"Colors" : [ 
@@ -31,8 +32,10 @@
 				"#1fddff"
 			]
 		},
+```
 
 - с диапазоном
+```json
 "Backlight": {
 	"Type" : "RangeBacklight",
 	"Bigger" : {
@@ -48,11 +51,24 @@
 		"Color" : "#ffccaa"
 	}
 },
+```
 
+### Output
+Сортируем байты в соответствии с заданным порядком
+
+```json
+"Output": [
+	7,
+    6,
+    5,
+    4
+],
+```
 
 
 ### Использование TelemetryUI.dll
 
+```c#
 var teleUI = new TeleUI();
 
 teleUI.Init("scheme.config.json");
@@ -64,13 +80,15 @@ teleUI.Process(byte[]);
 teleUI.Clear(); //если нужно очистить данные
 
 teleUI.Refresh(); //если нужно перезагрузить компонент с измененной схемой
-
+```
 
 
 ### Использование TelemetryUI с автообновлением файла конфигурации
 
+```c#
 var cfl = new ConfigFileListener(Dispatcher, TeleUI);
 
 //При обновлении файла вызывает TeleUI.Refresh() из потока GUI
 
 cfl.Dispose();
+```
